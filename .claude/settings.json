@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "agent",
+            "prompt": "Check if any source files were modified this session by running: git diff HEAD --name-only. If Python models, JavaScript files, XML views, or security files were changed, update README.rst to reflect the changes. Specifically: (1) add a new Changelog entry under the latest version or create a new version entry describing what was added or fixed, (2) update the Supported Shortcuts table if any shortcut fields were added or removed, (3) correct any outdated descriptions. Keep the existing RST structure and formatting intact. If no source files were changed, do nothing.",
+            "timeout": 60
+          }
+        ]
+      }
+    ]
+  }
+}

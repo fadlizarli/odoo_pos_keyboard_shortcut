@@ -8,7 +8,6 @@ patch(ProductScreen.prototype, {
         super.setup(...arguments);
         useExternalListener(document, "keydown", (ev) => {
             if (Object.keys(this.popup.popups).length === 0) {
-                ev.preventDefault();
                 this._product_screen_shortcuts(ev);
             }
         });
@@ -16,28 +15,35 @@ patch(ProductScreen.prototype, {
     _product_screen_shortcuts(event){
         if (!this.pos.config.enable_keyboard_shortcuts || !this.pos.config.select_shortcut_id) return;
         if (!this.pos.keyboard_shortcuts?.[0]) return;
+        if (!event.ctrlKey) return;
         const sc = this.pos.keyboard_shortcuts[0];
-        if (event.ctrlKey && event.key === sc.customer_screen?.toLowerCase()) {
+        if (event.key === sc.customer_screen?.toLowerCase()) {
+            event.preventDefault();
             this.pos.selectPartner();
         }
-        else if (event.ctrlKey && event.key === sc.select_price?.toLowerCase()) {
+        else if (event.key === sc.select_price?.toLowerCase()) {
+            event.preventDefault();
             this.onNumpadClick('price');
         }
-        else if (event.ctrlKey && event.key === sc.select_discount?.toLowerCase()) {
+        else if (event.key === sc.select_discount?.toLowerCase()) {
+            event.preventDefault();
             this.onNumpadClick('discount');
         }
-        else if (event.ctrlKey && event.key === sc.select_qty?.toLowerCase()) {
+        else if (event.key === sc.select_qty?.toLowerCase()) {
+            event.preventDefault();
             this.onNumpadClick('quantity');
         }
-        else if (event.ctrlKey && event.key === sc.select_user?.toLowerCase()) {
+        else if (event.key === sc.select_user?.toLowerCase()) {
+            event.preventDefault();
             document.querySelector('.username')?.click();
         }
-        else if (event.ctrlKey && event.key === sc.next_screen?.toLowerCase()) {
+        else if (event.key === sc.next_screen?.toLowerCase()) {
+            event.preventDefault();
             this.onClickPay();
         }
-        else if (event.ctrlKey && event.key === sc.search_product?.toLowerCase()) {
-            const searchInput = document.querySelector('.pos-search-bar input');
-            searchInput?.focus();
+        else if (event.key === sc.search_product?.toLowerCase()) {
+            event.preventDefault();
+            document.querySelector('.pos-search-bar input')?.focus();
         }
     }
 });

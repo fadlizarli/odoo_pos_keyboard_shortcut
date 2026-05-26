@@ -9,20 +9,24 @@ patch(PaymentScreen.prototype, {
         useExternalListener(document, 'keydown', (event) => {
             if (!this.pos.config.enable_keyboard_shortcuts) return;
             if (!this.pos.keyboard_shortcuts?.[0]) return;
-            event.preventDefault();
+            if (!event.ctrlKey) return;
             const sc = this.pos.keyboard_shortcuts[0];
-            if (event.ctrlKey && event.key === sc.select_invoice?.toLowerCase()) {
+            if (event.key === sc.select_invoice?.toLowerCase()) {
+                event.preventDefault();
                 document.querySelector('.js_invoice')?.click();
             }
-            if (event.ctrlKey && event.key === sc.back_screen?.toLowerCase()) {
+            if (event.key === sc.back_screen?.toLowerCase()) {
+                event.preventDefault();
                 document.querySelector('.back')?.click();
             }
             if (this.pos.payment_method_key?.[0]) {
-                if (event.ctrlKey && event.key === this.pos.payment_method_key[0].key_code?.toLowerCase()) {
+                if (event.key === this.pos.payment_method_key[0].key_code?.toLowerCase()) {
+                    event.preventDefault();
                     document.querySelector('.payment-method-display')?.click();
                 }
             }
-            if (event.ctrlKey && event.key === sc.validate_order?.toLowerCase()) {
+            if (event.key === sc.validate_order?.toLowerCase()) {
+                event.preventDefault();
                 this.validateOrder();
             }
         });

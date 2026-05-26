@@ -9,18 +9,22 @@ patch(ReceiptScreen.prototype, {
         useExternalListener(document, 'keydown', (event) => {
             if (!this.pos.config.enable_keyboard_shortcuts) return;
             if (!this.pos.keyboard_shortcuts?.[0]) return;
-            event.preventDefault();
+            if (!event.ctrlKey) return;
             const sc = this.pos.keyboard_shortcuts[0];
-            if (event.ctrlKey && event.key === sc.print_receipt?.toLowerCase()) {
+            if (event.key === sc.print_receipt?.toLowerCase()) {
+                event.preventDefault();
                 this.printReceipt();
             }
-            if (event.ctrlKey && event.key === sc.new_order?.toLowerCase()) {
+            if (event.key === sc.new_order?.toLowerCase()) {
+                event.preventDefault();
                 this.orderDone();
             }
-            if (event.ctrlKey && event.key === sc.resume_order?.toLowerCase()) {
+            if (event.key === sc.resume_order?.toLowerCase()) {
+                event.preventDefault();
                 this.resumeOrder();
             }
-            if (event.ctrlKey && event.key === sc.sent_email?.toLowerCase()) {
+            if (event.key === sc.sent_email?.toLowerCase()) {
+                event.preventDefault();
                 this.onSendEmail();
             }
         });
