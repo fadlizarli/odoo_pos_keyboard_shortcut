@@ -83,6 +83,8 @@ Keys marked **(fixed)** cannot be changed.
 +---------------------+-----------------------------------+
 | Ctrl + Y            | Send Receipt by Email             |
 +---------------------+-----------------------------------+
+| Ctrl + W            | Send Receipt via WhatsApp         |
++---------------------+-----------------------------------+
 | Enter (fixed)       | Confirm / Next Screen             |
 +---------------------+-----------------------------------+
 
@@ -230,6 +232,15 @@ Troubleshooting
 
 Changelog
 ---------
+
+**17.0.1.0.4**
+
+* New: **Send Receipt via WhatsApp** shortcut (``Ctrl+W`` default) — calls the
+  ``sendWhatsApp()`` method patched by the ``pos_whatsapp_receipt_baileys``
+  module onto the Receipt Screen; uses optional chaining (``?.``) to ensure
+  no crash when that module is not installed
+* New: **Shortcut Popup** now displays all receipt screen shortcuts (print,
+  new order, resume, email, WhatsApp) — previously only print receipt was listed
 
 **17.0.1.0.3**
 
