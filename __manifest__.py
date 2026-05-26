@@ -22,7 +22,7 @@
 {
     'name': 'POS Keyboard Shortcut',
     'version': '17.0.1.0.0',
-    'summery': 'To quickly process transactions, use the following POS'
+    'summary': 'To quickly process transactions, use the following POS'
                ' (Point of Sale) keyboard shortcuts',
     'description': """Easily operate the Point of Sale (POS) system by 
      utilizing POS keyboard shortcuts.""",
@@ -39,6 +39,7 @@
              ],
     'assets': {
         'point_of_sale._assets_pos': [
+            'odoo_pos_keyboard_shortcut/static/src/js/clipboard_polyfill.js',
             'odoo_pos_keyboard_shortcut/static/src/js/shortcut_popup.js',
             'odoo_pos_keyboard_shortcut/static/src/xml/shortcut_popup.xml',
             'odoo_pos_keyboard_shortcut/static/src/xml/shortcut_button.xml',

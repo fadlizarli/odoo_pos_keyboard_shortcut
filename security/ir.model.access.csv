@@ -1,3 +1,5 @@
 id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
-access_pos_keyboard_shortcut,access.pos.keyboard.shortcut,model_pos_keyboard_shortcut,base.group_user,1,1,1,1
-access_pos_payment_method_key,access.pos.payment.method.key,model_pos_payment_method_key,base.group_user,1,1,1,1
+access_pos_keyboard_shortcut_user,access.pos.keyboard.shortcut.user,model_pos_keyboard_shortcut,base.group_user,1,0,0,0
+access_pos_keyboard_shortcut_manager,access.pos.keyboard.shortcut.manager,model_pos_keyboard_shortcut,point_of_sale.group_pos_manager,1,1,1,1
+access_pos_payment_method_key_user,access.pos.payment.method.key.user,model_pos_payment_method_key,base.group_user,1,0,0,0
+access_pos_payment_method_key_manager,access.pos.payment.method.key.manager,model_pos_payment_method_key,point_of_sale.group_pos_manager,1,1,1,1

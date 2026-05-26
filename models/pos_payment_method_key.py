@@ -29,7 +29,7 @@ class PosPaymentMethodKey(models.Model):
     _description = 'Pos Payment Method Key'
 
     payment_method_id = fields.Many2one('pos.payment.method',
-                                        String='Payment Method',
+                                        string='Payment Method',
                                         help='This field represents the payment'
                                              'method used for transactions in '
                                              'the Point of Sale module. '

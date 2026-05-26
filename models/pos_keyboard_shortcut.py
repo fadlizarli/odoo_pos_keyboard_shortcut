@@ -39,7 +39,7 @@ class PosKeyboardShortcut(models.Model):
     select_qty = fields.Char(string='Select Quantity', default='Q',
                              help='To select quantity')
     select_discount = fields.Char(string='Select Discount', default='D',
-                                  hel='To select discount')
+                                  help='To select discount')
     select_price = fields.Char(string='Select Price', default='P',
                                help='To select the price')
     delete_orderlines = fields.Char(string='Delete Orderlines',
@@ -73,6 +73,8 @@ class PosKeyboardShortcut(models.Model):
                                help='To Resume Order')
     sent_email = fields.Char(string='Sent Email', default='Y',
                              help='To Sent Email')
+    search_product = fields.Char(string='Search Product', default='F',
+                                 help='To focus the product search bar')
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -91,7 +93,7 @@ class PosKeyboardShortcut(models.Model):
                     'back_screen', 'select_user', 'sent_email', 'resume_order',
                     'new_order', 'close_pos', 'select_invoice',
                     'validate_order', 'click_cancel', 'click_ok',
-                    'next_screen_show', 'delete_orderlines')
+                    'next_screen_show', 'delete_orderlines', 'search_product')
     def _check_same_value(self):
         """This method serves as a constraint for ensuring that specific fields
         within the model do not contain identical values simultaneously.
@@ -105,8 +107,8 @@ class PosKeyboardShortcut(models.Model):
                                'print_receipt', 'back_screen', 'select_user',
                                'sent_email', 'resume_order', 'new_order',
                                'close_pos', 'select_invoice', 'validate_order',
-                               'click_cancel', 'next_screen_show',
-                               'delete_orderlines']
+                               'click_cancel', 'click_ok', 'next_screen_show',
+                               'delete_orderlines', 'search_product']
             field_values = [getattr(record, field) for field in
                             fields_to_check]
             filtered_values = [value for value in field_values if
