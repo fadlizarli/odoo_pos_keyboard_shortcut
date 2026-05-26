@@ -58,6 +58,7 @@ Keys marked **(fixed)** cannot be changed.
 | `Ctrl + X` | New Order (close receipt) |
 | `Ctrl + S` | Resume Order |
 | `Ctrl + Y` | Send Receipt by Email |
+| `Ctrl + W` | Send Receipt via WhatsApp |
 | `Enter` **(fixed)** | Confirm / Next Screen |
 
 ### Popup Dialogs (all screens)
@@ -189,6 +190,11 @@ All handlers call `event.preventDefault()` for matched shortcuts. Avoid assignin
 ---
 
 ## Changelog
+
+### 17.0.1.0.4
+
+- **New:** Send WhatsApp Receipt shortcut (`Ctrl+W` default) — calls `sendWhatsApp()` on the Receipt Screen, compatible with the `pos_whatsapp_receipt_baileys` module. Uses optional chaining so no error occurs if the WhatsApp module is not installed.
+- **Fix:** Shortcut popup Receipt section now shows all shortcuts (Print, New Order, Resume, Email, WhatsApp) — previously only Print Receipt was listed.
 
 ### 17.0.1.0.3
 
