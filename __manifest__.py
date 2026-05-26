@@ -22,7 +22,7 @@
 {
     'name': 'POS Keyboard Shortcut',
     'version': '17.0.1.0.0',
-    'summery': 'To quickly process transactions, use the following POS'
+    'summary': 'To quickly process transactions, use the following POS'
                ' (Point of Sale) keyboard shortcuts',
     'description': """Easily operate the Point of Sale (POS) system by 
      utilizing POS keyboard shortcuts.""",

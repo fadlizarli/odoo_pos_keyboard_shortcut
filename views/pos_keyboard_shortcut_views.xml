@@ -24,14 +24,16 @@
                     </h1>
                     <group string="Product Screen Shortcuts">
                         <group>
-                            <field name="next_screen" string="Payment Screen"/>
+                            <field name="next_screen"/>
                             <field name="customer_screen"/>
                             <field name="select_qty"/>
                             <field name="select_discount"/>
                             <field name="select_price"/>
+                            <field name="search_product"/>
                         </group>
                         <group>
                             <field name="delete_orderlines"/>
+                            <field name="select_user"/>
                         </group>
                     </group>
                     <group string="Receipt Screen Shortcuts">
@@ -52,7 +54,6 @@
                             <field name="click_cancel"/>
                         </group>
                         <group>
-                            <field name="select_user"/>
                             <field name="close_pos"/>
                         </group>
                     </group>
