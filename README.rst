@@ -87,6 +87,17 @@ Access Control
 Changelog
 ---------
 
+**17.0.1.0.3**
+
+* Fix: **keyboard handler blocking search bar and all text input** — The
+  ``ev.preventDefault()`` call was applied globally to all keydown events,
+  blocking the native search bar and any input field in the POS screen. Refactored
+  to move ``preventDefault()`` inside individual shortcut handlers and added an
+  early return for non-Ctrl keys, so only the exact ``Ctrl+[key]`` combinations
+  we handle are intercepted. All other keystrokes now pass through normally to
+  the browser/Odoo input fields, restoring functionality for search, numpad input,
+  and other text entry.
+
 **17.0.1.0.2**
 
 * Fix: **clipboard API support for HTTP environments** — Added ``clipboard_polyfill.js``
