@@ -39,6 +39,7 @@
              ],
     'assets': {
         'point_of_sale._assets_pos': [
+            'odoo_pos_keyboard_shortcut/static/src/js/clipboard_polyfill.js',
             'odoo_pos_keyboard_shortcut/static/src/js/shortcut_popup.js',
             'odoo_pos_keyboard_shortcut/static/src/xml/shortcut_popup.xml',
             'odoo_pos_keyboard_shortcut/static/src/xml/shortcut_button.xml',
