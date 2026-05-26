@@ -27,6 +27,10 @@ patch(ReceiptScreen.prototype, {
                 event.preventDefault();
                 this.onSendEmail();
             }
+            if (event.key === sc.send_whatsapp?.toLowerCase()) {
+                event.preventDefault();
+                this.sendWhatsApp?.();
+            }
         });
     },
 });

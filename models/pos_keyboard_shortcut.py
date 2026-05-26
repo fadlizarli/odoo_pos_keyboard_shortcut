@@ -75,6 +75,8 @@ class PosKeyboardShortcut(models.Model):
                              help='To Sent Email')
     search_product = fields.Char(string='Search Product', default='F',
                                  help='To focus the product search bar')
+    send_whatsapp = fields.Char(string='Send WhatsApp Receipt', default='W',
+                                help='Send receipt via WhatsApp (requires pos_whatsapp_receipt_baileys)')
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -93,7 +95,8 @@ class PosKeyboardShortcut(models.Model):
                     'back_screen', 'select_user', 'sent_email', 'resume_order',
                     'new_order', 'close_pos', 'select_invoice',
                     'validate_order', 'click_cancel', 'click_ok',
-                    'next_screen_show', 'delete_orderlines', 'search_product')
+                    'next_screen_show', 'delete_orderlines', 'search_product',
+                    'send_whatsapp')
     def _check_same_value(self):
         """This method serves as a constraint for ensuring that specific fields
         within the model do not contain identical values simultaneously.
@@ -108,7 +111,8 @@ class PosKeyboardShortcut(models.Model):
                                'sent_email', 'resume_order', 'new_order',
                                'close_pos', 'select_invoice', 'validate_order',
                                'click_cancel', 'click_ok', 'next_screen_show',
-                               'delete_orderlines', 'search_product']
+                               'delete_orderlines', 'search_product',
+                               'send_whatsapp']
             field_values = [getattr(record, field) for field in
                             fields_to_check]
             filtered_values = [value for value in field_values if

@@ -42,6 +42,7 @@
                             <field name="new_order"/>
                             <field name="resume_order"/>
                             <field name="sent_email"/>
+                            <field name="send_whatsapp"/>
                         </group>
                         <group>
                             <field name="next_screen_show"/>

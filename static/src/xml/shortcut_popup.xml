@@ -151,6 +151,42 @@
 									Print Receipt
 								</td>
 							</tr>
+							<tr>
+								<td>
+									Ctrl + <t
+                                        t-esc="this.env.services.pos.keyboard_shortcuts[0]?.new_order"/>
+								</td>
+                                <td>
+									New Order
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Ctrl + <t
+                                        t-esc="this.env.services.pos.keyboard_shortcuts[0]?.resume_order"/>
+								</td>
+                                <td>
+									Resume Order
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Ctrl + <t
+                                        t-esc="this.env.services.pos.keyboard_shortcuts[0]?.sent_email"/>
+								</td>
+                                <td>
+									Send Email
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Ctrl + <t
+                                        t-esc="this.env.services.pos.keyboard_shortcuts[0]?.send_whatsapp"/>
+								</td>
+                                <td>
+									Send WhatsApp Receipt
+								</td>
+							</tr>
 						</tbody>
 					</table>
 				</div>
