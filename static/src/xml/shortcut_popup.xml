@@ -74,6 +74,24 @@
 										Select User
 									</td>
 								</tr>
+                                <tr>
+									<td>
+										Ctrl + <t
+                                            t-esc="this.env.services.pos.keyboard_shortcuts[0]?.next_screen"/>
+									</td>
+                                    <td>
+										Go to Payment Screen
+									</td>
+								</tr>
+                                <tr>
+									<td>
+										Ctrl + <t
+                                            t-esc="this.env.services.pos.keyboard_shortcuts[0]?.search_product"/>
+									</td>
+                                    <td>
+										Search Product
+									</td>
+								</tr>
 							</t>
 						</tbody>
 					</table>
@@ -169,15 +187,6 @@
 								</td>
                                 <td>
 									Ok
-								</td>
-							</tr>
-                            <tr>
-								<td>
-									Ctrl + <t
-                                        t-esc="this.env.services.pos.keyboard_shortcuts[0]?.select_user"/>
-								</td>
-                                <td>
-									Select User
 								</td>
 							</tr>
 						</tbody>
