@@ -87,6 +87,14 @@ Access Control
 Changelog
 ---------
 
+**17.0.1.0.2**
+
+* Fix: **clipboard API support for HTTP environments** — Added ``clipboard_polyfill.js``
+  to handle environments where ``navigator.clipboard`` is unavailable (plain HTTP
+  without HTTPS). The polyfill detects missing clipboard API and provides a fallback
+  using ``document.execCommand('copy')``, with a Proxy-based fallback if
+  ``Object.defineProperty`` is blocked by the browser.
+
 **17.0.1.0.1**
 
 * Fix: ``hel=`` typo on ``select_discount`` field (help text was not displayed)
