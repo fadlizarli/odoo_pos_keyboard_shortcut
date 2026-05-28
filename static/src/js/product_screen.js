@@ -2,6 +2,7 @@
 import { ProductScreen } from "@point_of_sale/app/screens/product_screen/product_screen";
 import { patch } from "@web/core/utils/patch";
 import { useExternalListener } from "@odoo/owl";
+import { SearchProductPopup } from "./search_product_popup";
 
 patch(ProductScreen.prototype, {
     setup(){
@@ -43,7 +44,7 @@ patch(ProductScreen.prototype, {
         }
         else if (event.key === sc.search_product?.toLowerCase()) {
             event.preventDefault();
-            document.querySelector('.pos-search-bar input')?.focus();
+            this.popup.add(SearchProductPopup, {});
         }
     }
 });
