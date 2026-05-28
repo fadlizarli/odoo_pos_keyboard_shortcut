@@ -38,7 +38,7 @@ Keys marked **(fixed)** cannot be changed.
 | `Ctrl + P` | Select Price mode |
 | `Ctrl + U` | Select POS User |
 | `Ctrl + Z` | Go to Payment Screen |
-| `Ctrl + F` | Focus Product Search Bar |
+| `Ctrl + F` | Open Search Product Popup |
 | `Backspace` **(fixed)** | Delete selected order line |
 
 ### Payment Screen
@@ -190,6 +190,14 @@ All handlers call `event.preventDefault()` for matched shortcuts. Avoid assignin
 ---
 
 ## Changelog
+
+### 17.0.1.0.6
+
+- **New:** `Ctrl+F` now opens a **custom Search Product popup** instead of focusing the native search bar. Real-time filtering by product name, barcode, or SKU; `↑`/`↓` arrow navigation; `Enter` to add the selected product directly to the current order; `Esc` to close. Displays up to 15 results with price badge per entry.
+
+### 17.0.1.0.5
+
+- **Fix:** search bar selector corrected from `.pos-search-bar input` to `.products-widget-control input` for proper Odoo 17 POS compatibility.
 
 ### 17.0.1.0.4
 
