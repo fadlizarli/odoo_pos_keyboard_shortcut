@@ -51,7 +51,7 @@ Keys marked **(fixed)** cannot be changed.
 +---------------------+-----------------------------------+
 | Ctrl + Z            | Go to Payment Screen              |
 +---------------------+-----------------------------------+
-| Ctrl + F            | Focus Product Search Bar          |
+| Ctrl + F            | Open Search Product Popup         |
 +---------------------+-----------------------------------+
 | Backspace (fixed)   | Delete selected order line        |
 +---------------------+-----------------------------------+
@@ -197,12 +197,14 @@ Technical Overview
 +---------------------------+--------------------------------------------+
 | ``shortcut_button.js``    | Adds Shortcuts button to product screen    |
 +---------------------------+--------------------------------------------+
-| ``shortcut_popup.js``     | Popup showing active key map               |
-+---------------------------+--------------------------------------------+
-| ``error_popup.js``        | Warning popup when no profile is selected  |
-+---------------------------+--------------------------------------------+
-| ``clipboard_polyfill.js`` | Clipboard fallback for non-HTTPS servers   |
-+---------------------------+--------------------------------------------+
+| ``shortcut_popup.js``        | Popup showing active key map               |
++------------------------------+--------------------------------------------+
+| ``search_product_popup.js``  | Custom search popup (Ctrl+F)               |
++------------------------------+--------------------------------------------+
+| ``error_popup.js``           | Warning popup when no profile is selected  |
++------------------------------+--------------------------------------------+
+| ``clipboard_polyfill.js``    | Clipboard fallback for non-HTTPS servers   |
++------------------------------+--------------------------------------------+
 
 Troubleshooting
 ---------------
@@ -232,6 +234,14 @@ Troubleshooting
 
 Changelog
 ---------
+
+**17.0.1.0.6**
+
+* New: **Search Product popup** — ``Ctrl+F`` now opens a custom search popup
+  instead of focusing the native search bar. The popup provides real-time
+  filtering by product name, barcode, or SKU; keyboard navigation with
+  ``↑``/``↓`` arrows; and ``Enter`` to add the selected product directly to
+  the current order. Shows up to 15 matches with price badge per result.
 
 **17.0.1.0.5**
 
