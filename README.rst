@@ -233,6 +233,13 @@ Troubleshooting
 Changelog
 ---------
 
+**17.0.1.0.5**
+
+* Fix: search bar selector corrected from ``.pos-search-bar input`` to
+  ``.products-widget-control input`` for proper Odoo 17 POS compatibility —
+  the selector now correctly focuses the search input in Odoo 17's product
+  list widget
+
 **17.0.1.0.4**
 
 * New: **Send Receipt via WhatsApp** shortcut (``Ctrl+W`` default) — calls the
