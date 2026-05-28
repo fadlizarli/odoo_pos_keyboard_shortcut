@@ -43,7 +43,7 @@ patch(ProductScreen.prototype, {
         }
         else if (event.key === sc.search_product?.toLowerCase()) {
             event.preventDefault();
-            document.querySelector('.pos-search-bar input')?.focus();
+            document.querySelector('.products-widget-control input')?.focus();
         }
     }
 });
